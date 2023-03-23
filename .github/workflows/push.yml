@@ -1,0 +1,20 @@
+
+name: Push
+
+on: push
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Out
+        uses: actions/checkout@v3
+      - name: Install Java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+          cache: gradle
+      - name: Build Project
+        run: ./gradlew

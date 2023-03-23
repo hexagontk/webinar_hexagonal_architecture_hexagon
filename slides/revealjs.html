@@ -1,0 +1,65 @@
+<!doctype html>
+
+<meta lang="en" charset="utf-8"/>
+
+<title>Hexagonal Architecture inside the Hexagon Toolkit Design</title>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.css"/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/monokai.min.css"/>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/theme/black.min.css"/>
+
+<style>
+  :root {
+    --r-background-color: #2E303E;
+    --r-heading-text-transform: none;
+    --r-heading-color: #279FE7;
+    --r-main-font-size: 30px;
+  }
+</style>
+
+<div class="reveal">
+  <div class="slides">
+    <section
+      data-markdown="slides.md"
+      data-separator="^\n---\n$"
+      data-separator-vertical="^\n--\n$">
+    </section>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/reveal.min.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/markdown/markdown.min.js">
+</script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/highlight/highlight.min.js">
+</script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/math/math.min.js"></script>
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.4.0/plugin/notes/notes.min.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/reveal.js-mermaid-plugin@1.1.0/plugin/mermaid/mermaid.js">
+</script>
+
+<script>
+  Reveal.initialize({
+    controls: false,
+    progress: false,
+    history: false,
+    center: true,
+    mermaid: {
+      theme: 'dark',
+      themeVariables: {
+        darkMode: true,
+      },
+    },
+    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes, RevealMath.KaTeX, RevealMermaid ]
+  });
+</script>
