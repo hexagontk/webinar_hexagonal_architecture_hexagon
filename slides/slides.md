@@ -45,7 +45,7 @@
 ---
 
 ## Hello World
-* Check the <a href="https://hexagonkt.com/quick_start" target="_blank">
+* Check the <a href="https://hexagontk.com/quick_start" target="_blank">
   Quick start</a> page
 * Clone a 'starter' repository
 * These slides are served used Hexagon
@@ -63,7 +63,7 @@
 * Application logic: use cases, services or domain
   <!-- .element: class="fragment" data-fragment-index="5" -->
 
-![Img](https://hexagonkt.com/img/architecture.svg)
+![Img](https://hexagontk.com/img/architecture.svg)
 <!-- .element: class="r-stretch" -->
 
 ---
@@ -76,7 +76,7 @@
 * Uses the Ports/Adapters scheme, the domain is the client application
   <!-- .element: class="fragment" data-fragment-index="3" -->
 
-![Img](https://hexagonkt.com/img/architecture.svg)
+![Img](https://hexagontk.com/img/architecture.svg)
 <!-- .element: class="r-stretch" -->
 
 ---
@@ -140,5 +140,5 @@ graph TD
 * Follow the [@hexagon_kt] Twitter account to be notified on Hexagon and related tools
 * If you like the project, please share... And give it a ⭐
 
-[codecv]: https://github.com/hexagonkt/codecv
+[codecv]: https://github.com/hexagontk/codecv
 [@hexagon_kt]: https://twitter.com/hexagon_kt

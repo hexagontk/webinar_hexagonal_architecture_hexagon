@@ -2,12 +2,14 @@ package org.example
 
 import com.hexagonkt.core.logging.info
 import com.hexagonkt.core.media.APPLICATION_JSON
+import com.hexagonkt.core.urlOf
 import com.hexagonkt.http.client.HttpClient
+import com.hexagonkt.http.client.HttpClientSettings
 import com.hexagonkt.http.client.jetty.JettyClientAdapter
 import com.hexagonkt.http.model.HttpMethod.POST
 import com.hexagonkt.http.model.NOT_FOUND_404
 import com.hexagonkt.http.model.OK_200
-import com.hexagonkt.http.server.model.HttpServerRequest
+import com.hexagonkt.http.model.HttpRequest
 import com.hexagonkt.serialization.jackson.json.Json
 import com.hexagonkt.serialization.parseMap
 import com.hexagonkt.serialization.serialize
@@ -16,7 +18,6 @@ import org.junit.jupiter.api.BeforeAll
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInstance
 import org.junit.jupiter.api.TestInstance.Lifecycle.PER_CLASS
-import java.net.URL
 import java.time.LocalDateTime
 import kotlin.test.assertEquals
 
@@ -24,7 +25,10 @@ import kotlin.test.assertEquals
 internal class ApplicationTest {
 
     private val client by lazy {
-        HttpClient(JettyClientAdapter(), URL("http://localhost:${restApi.server.runtimePort}"))
+        HttpClient(
+            JettyClientAdapter(),
+            HttpClientSettings(urlOf("http://localhost:${restApi.server.runtimePort}"))
+        )
     }
 
     @BeforeAll fun beforeAll() {
@@ -44,7 +48,7 @@ internal class ApplicationTest {
         val body = appointmentMessage.data.serialize(Json)
         val handler = restApi.applicationHandler
 
-        handler.process(HttpServerRequest(POST, path="/api/appointments", body = body)).apply {
+        handler.process(HttpRequest(POST, path="/api/appointments", body = body)).apply {
             assertEquals(OK_200, status)
             assertEquals(APPLICATION_JSON, response.contentType?.mediaType)
         }

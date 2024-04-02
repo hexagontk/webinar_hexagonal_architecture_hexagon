@@ -7,7 +7,7 @@ The slides are on the `slides` folder (surprisingly). They are written in Markdo
 presented by [reveal.js] and served by a Kotlin script (though you can use any other means).
 
 For the sake of the demo, all code was contained on a single file, you can check a better structure
-example in the [hexagonal_starter](https://github.com/hexagonkt/hexagonal_starter) template project.
+example in the [hexagonal_starter](https://github.com/hexagontk/hexagonal_starter) template project.
 
 Below you can find the information regarding the building and running of the presented demo
 application.

@@ -10,8 +10,8 @@ import com.hexagonkt.http.server.*
 import com.hexagonkt.http.server.jetty.JettyServletAdapter
 import com.hexagonkt.core.require
 import com.hexagonkt.http.model.ContentType
-import com.hexagonkt.http.server.handlers.HttpHandler
-import com.hexagonkt.http.server.handlers.path
+import com.hexagonkt.http.handlers.HttpHandler
+import com.hexagonkt.http.handlers.path
 import com.hexagonkt.serialization.jackson.json.Json
 import com.hexagonkt.serialization.parseMap
 import com.hexagonkt.serialization.serialize
@@ -117,7 +117,7 @@ class RestApi(
 ) {
     val appointmentsHandler: HttpHandler = path("/appointments") {
         post {
-            val data = request.bodyString().parseMap(Json).mapKeys { it.key.toString() }
+            val data = request.bodyString().parseMap(Json).mapKeys { it.key }
             val user = AppointmentMessage(data)
             appointmentsService.create(user.appointment())
             ok(user)

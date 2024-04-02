@@ -2,13 +2,13 @@ import org.graalvm.buildtools.gradle.dsl.GraalVMExtension
 import java.lang.System.getProperty
 
 plugins {
-    kotlin("jvm") version("1.8.10")
-    id("org.graalvm.buildtools.native") version("0.9.20")
+    kotlin("jvm") version("1.9.23")
+    id("org.graalvm.buildtools.native") version("0.10.1")
 }
 
 val options = "-Xmx48m"
-val hexagonVersion = "2.6.6"
-val gradleScripts = "https://raw.githubusercontent.com/hexagonkt/hexagon/$hexagonVersion/gradle"
+val hexagonVersion = "3.5.3"
+val gradleScripts = "https://raw.githubusercontent.com/hexagontk/hexagon/$hexagonVersion/gradle"
 
 apply(from = "$gradleScripts/kotlin.gradle")
 apply(from = "$gradleScripts/application.gradle")
@@ -31,7 +31,7 @@ extensions.configure<JavaApplication> {
 dependencies {
     "implementation"("com.hexagonkt:http_server_jetty:$hexagonVersion")
     "implementation"("com.hexagonkt:serialization_jackson_json:$hexagonVersion")
-    "implementation"("org.slf4j:slf4j-nop:2.0.6")
+    "implementation"("org.slf4j:slf4j-nop:2.0.7")
 
     "testImplementation"("com.hexagonkt:http_client_jetty:$hexagonVersion")
 }

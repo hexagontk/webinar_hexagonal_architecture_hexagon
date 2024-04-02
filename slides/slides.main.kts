@@ -1,6 +1,6 @@
 #!/usr/bin/env kotlin
 
-@file:DependsOn("com.hexagonkt:http_server_netty:2.6.6")
+@file:DependsOn("com.hexagonkt:http_server_netty:3.5.3")
 
 import com.hexagonkt.core.logging.info
 import com.hexagonkt.core.logging.logger
